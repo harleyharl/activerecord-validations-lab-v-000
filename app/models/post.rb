@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
 
   def title_must_be_clickbaity
     binding.pry
-    unless title.include?("Won't Believe" "Secret" "Top" "Guess")
+    unless self.title.include?("Won't Believe" "Secret" "Top" "Guess")
       errors.add(:title, "False")
     end
   end
