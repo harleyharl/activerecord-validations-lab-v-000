@@ -4,6 +4,6 @@ class Post < ActiveRecord::Base
   validates :summary , length: { maximum: 100 }
   # validates :category, presence: true
 
-  validates :category, inclusion: { in: "Fiction", "Non-Fiction" }
+  validates :category, inclusion: { in: %w("Fiction" "Non-Fiction") }
 
 end
