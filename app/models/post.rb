@@ -9,8 +9,8 @@ end
 
 class MyValidator < ActiveModel::Validator
   def validate(post)
-    unless post.name.starts_with? 'X'
-      record.errors[:name] << 'Need a name starting with X please!'
+    unless post.title.include? "Won't Believe", "Secret", "Top [number]", or "Guess"
+      post.errors[:name] << 'Need a name starting with X please!'
     end
   end
 end
