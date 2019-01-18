@@ -10,6 +10,7 @@ end
 
 
 def title_must_be_clickbaity(post)
+  binding.pry
   unless post.title.include?("Won't Believe" "Secret" "Top" "Guess")
     errors.add(:title, "False")
   end
