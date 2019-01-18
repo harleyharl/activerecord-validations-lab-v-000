@@ -10,6 +10,6 @@ end
 
 def title_must_be_clickbaity
   unless title.include? "Won't Believe", "Secret", "Top [number]" "Guess"
-    errors.add(:expiration_date, "can't be in the past")
+    errors.add(:title, "False")
   end
 end
