@@ -14,8 +14,7 @@ class Post < ActiveRecord::Base
   ]
 
   def title_must_be_clickbaity
-    # binding.pry
-    if CLICKBAIT_PATTERNS.none?  { |pattern| pattern.match(self.title) } #=> true
+    if CLICKBAIT_PATTERNS.none?  { |pattern| pattern.match(self.title) } 
       errors.add(:title, "False")
     end
   end
