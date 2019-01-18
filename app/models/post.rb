@@ -10,7 +10,7 @@ end
 
 
 def title_must_be_clickbaity
-  unless title.include? "Won't Believe", "Secret", "Top [number]" "Guess"
+  unless title.include?("Won't Believe" "Secret" "Top" "Guess")
     errors.add(:title, "False")
   end
 end
