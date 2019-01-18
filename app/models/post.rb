@@ -10,7 +10,7 @@ end
 class MyValidator < ActiveModel::Validator
   def validate(post)
     unless post.title.include? "Won't Believe", "Secret", "Top [number]", or "Guess"
-      post.errors[:name] << 'Need a name starting with X please!'
+      post.errors[:title] << 'Not clickbait-y enough!'
     end
   end
 end
