@@ -1,6 +1,5 @@
 class Post < ActiveRecord::Base
-  include ActiveModel::Validations
-  validates_with MyValidator
+
   validates :title, presence: true
   validates :content, length: { minimum: 250 }
   validates :summary , length: { maximum: 250 }
@@ -9,10 +8,8 @@ class Post < ActiveRecord::Base
 end
 
 
-class MyValidator < ActiveModel::Validator
-  def validate(post)
-    unless post.title.include? "Won't Believe", "Secret", "Top [number]", "Guess"
-      post.errors[:title] << 'Not clickbait-y enough!'
-    end
+def title_must_be_clickbaity
+  unless title.include? && expiration_date < Date.today
+    errors.add(:expiration_date, "can't be in the past")
   end
 end
